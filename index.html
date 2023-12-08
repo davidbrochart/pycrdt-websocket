@@ -604,13 +604,13 @@
 <p><a href="https://github.com/jupyter-server/pycrdt-websocket/actions"><img alt="Build Status" src="https://github.com/jupyter-server/pycrdt-websocket/workflows/CI/badge.svg" /></a>
 <a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg" /></a></p>
 <hr />
-<p><strong>Documentation</strong>: <a href="https://jupyter-server.github.io/pycrdt-websocket" target="_blank">https://jupyter-server.github.io/pycrdt-websocket</a></p>
+<p><strong>Documentation</strong>: <a href="https://davidbrochart.github.io/pycrdt-websocket" target="_blank">https://davidbrochart.github.io/pycrdt-websocket</a></p>
 <p><strong>Source Code</strong>: <a href="https://github.com/jupyter-server/pycrdt-websocket" target="_blank">https://github.com/jupyter-server/pycrdt-websocket</a></p>
 <hr />
 <p>Pycrdt-websocket is a Python library for building WebSocket servers and clients that connect and synchronize shared documents.
 It can be used to create collaborative web applications.</p>
 <p>The following diagram illustrates a typical architecture. The goal is to share a document among several clients.</p>
-<p>Each client has an instance of a <a href="https://ypy.readthedocs.io/en/latest/autoapi/y_py/index.html#y_py.YDoc">YDoc</a>, representing their view of a document. A shared document also lives in a <a href="reference/Room/">room</a> on the server side. Conceptually, a room can be seen as the place where clients collaborate on a document. The WebSocket to which a client connects points to the corresponding room through the endpoint path. In the example below, clients A and B connect to a WebSocket at path <code>room-1</code>, and thus both clients find themselves in a room called <code>room-1</code>. All the <code>YDoc</code> synchronization logic is taken care of by the <a href="reference/WebSocket_provider/">WebsocketProvider</a>.</p>
+<p>Each client has an instance of a <code>Doc</code>, representing their view of a document. A shared document also lives in a <a href="reference/Room/">room</a> on the server side. Conceptually, a room can be seen as the place where clients collaborate on a document. The WebSocket to which a client connects points to the corresponding room through the endpoint path. In the example below, clients A and B connect to a WebSocket at path <code>room-1</code>, and thus both clients find themselves in a room called <code>room-1</code>. All the <code>Doc</code> synchronization logic is taken care of by the <a href="reference/WebSocket_provider/">WebsocketProvider</a>.</p>
 <p>Each update to a shared document can be persisted to disk using a <a href="reference/Store/">store</a>, which can be a file or a database.
 <pre class="mermaid"><code>flowchart TD
     classDef room1 fill:#f96
